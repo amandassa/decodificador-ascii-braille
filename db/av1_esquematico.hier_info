@@ -1,0 +1,33 @@
+|av1_esquematico
+L1 <= d.DB_MAX_OUTPUT_PORT_TYPE
+d => L1.DATAIN
+d => L2.DATAIN
+d => not_c_or_d.IN0
+d => L0.DATAIN
+d => not_d.IN0
+d => d_and_f.IN0
+L2 <= d.DB_MAX_OUTPUT_PORT_TYPE
+L3 <= not_c_or_d.DB_MAX_OUTPUT_PORT_TYPE
+c => not_c.IN0
+L4 <= <GND>
+L5 <= not_c.DB_MAX_OUTPUT_PORT_TYPE
+L0 <= d.DB_MAX_OUTPUT_PORT_TYPE
+led0 <= g_or_f_or_g_and_h.DB_MAX_OUTPUT_PORT_TYPE
+g => g_or_f_or_g_and_h.IN0
+f => g_or_f_or_g_and_h.IN1
+f => not_e_and_f.IN1
+f => d_and_f.IN1
+f => not_f.IN0
+e => e_and_h.IN0
+e => not_e.IN0
+e => not_d_and_e.IN1
+e => e_and_not_f.IN1
+h => e_and_h.IN1
+h => not_h.IN0
+led1 <= not_h_or_not_e_and_f.DB_MAX_OUTPUT_PORT_TYPE
+led2 <= <GND>
+led3 <= not_d_and_e.DB_MAX_OUTPUT_PORT_TYPE
+led4 <= e_and_not_f_OR_d_and_f.DB_MAX_OUTPUT_PORT_TYPE
+led5 <= not_d_or_not_e_or_not_h.DB_MAX_OUTPUT_PORT_TYPE
+
+

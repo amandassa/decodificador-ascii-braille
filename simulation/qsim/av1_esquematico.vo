@@ -1,0 +1,494 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+
+// DATE "04/03/2021 16:18:43"
+
+// 
+// Device: Altera EPM240T100C5 Package TQFP100
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module av1_esquematico (
+	L1,
+	d,
+	L2,
+	L3,
+	c,
+	L4,
+	L5,
+	L0,
+	led0,
+	g,
+	f,
+	e,
+	h,
+	led1,
+	led2,
+	led3,
+	led4,
+	led5);
+output 	L1;
+input 	d;
+output 	L2;
+output 	L3;
+input 	c;
+output 	L4;
+output 	L5;
+output 	L0;
+output 	led0;
+input 	g;
+input 	f;
+input 	e;
+input 	h;
+output 	led1;
+output 	led2;
+output 	led3;
+output 	led4;
+output 	led5;
+
+// Design Ports Information
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \d~combout ;
+wire \c~combout ;
+wire \not_c_or_d~combout ;
+wire \h~combout ;
+wire \g~combout ;
+wire \e~combout ;
+wire \f~combout ;
+wire \g_or_f_or_g_and_h~0_combout ;
+wire \not_h_or_not_e_and_f~combout ;
+wire \not_d_and_e~combout ;
+wire \e_and_not_f_OR_d_and_f~0_combout ;
+wire \not_d_or_not_e_or_not_h~combout ;
+
+
+// Location: PIN_36,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxii_io \d~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\d~combout ),
+	.padio(d));
+// synopsys translate_off
+defparam \d~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_38,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxii_io \c~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\c~combout ),
+	.padio(c));
+// synopsys translate_off
+defparam \c~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: LC_X4_Y1_N4
+maxii_lcell not_c_or_d(
+// Equation(s):
+// \not_c_or_d~combout  = (\d~combout ) # (((!\c~combout )))
+
+	.clk(gnd),
+	.dataa(\d~combout ),
+	.datab(vcc),
+	.datac(\c~combout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\not_c_or_d~combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam not_c_or_d.lut_mask = "afaf";
+defparam not_c_or_d.operation_mode = "normal";
+defparam not_c_or_d.output_mode = "comb_only";
+defparam not_c_or_d.register_cascade_mode = "off";
+defparam not_c_or_d.sum_lutc_input = "datac";
+defparam not_c_or_d.synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_35,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxii_io \h~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\h~combout ),
+	.padio(h));
+// synopsys translate_off
+defparam \h~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_33,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxii_io \g~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\g~combout ),
+	.padio(g));
+// synopsys translate_off
+defparam \g~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_34,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxii_io \e~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\e~combout ),
+	.padio(e));
+// synopsys translate_off
+defparam \e~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_30,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxii_io \f~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\f~combout ),
+	.padio(f));
+// synopsys translate_off
+defparam \f~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: LC_X4_Y1_N9
+maxii_lcell \g_or_f_or_g_and_h~0 (
+// Equation(s):
+// \g_or_f_or_g_and_h~0_combout  = (\g~combout ) # ((\f~combout ) # ((\h~combout  & \e~combout )))
+
+	.clk(gnd),
+	.dataa(\h~combout ),
+	.datab(\g~combout ),
+	.datac(\e~combout ),
+	.datad(\f~combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\g_or_f_or_g_and_h~0_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \g_or_f_or_g_and_h~0 .lut_mask = "ffec";
+defparam \g_or_f_or_g_and_h~0 .operation_mode = "normal";
+defparam \g_or_f_or_g_and_h~0 .output_mode = "comb_only";
+defparam \g_or_f_or_g_and_h~0 .register_cascade_mode = "off";
+defparam \g_or_f_or_g_and_h~0 .sum_lutc_input = "datac";
+defparam \g_or_f_or_g_and_h~0 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y1_N6
+maxii_lcell not_h_or_not_e_and_f(
+// Equation(s):
+// \not_h_or_not_e_and_f~combout  = (((!\e~combout  & \f~combout ))) # (!\h~combout )
+
+	.clk(gnd),
+	.dataa(\h~combout ),
+	.datab(vcc),
+	.datac(\e~combout ),
+	.datad(\f~combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\not_h_or_not_e_and_f~combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam not_h_or_not_e_and_f.lut_mask = "5f55";
+defparam not_h_or_not_e_and_f.operation_mode = "normal";
+defparam not_h_or_not_e_and_f.output_mode = "comb_only";
+defparam not_h_or_not_e_and_f.register_cascade_mode = "off";
+defparam not_h_or_not_e_and_f.sum_lutc_input = "datac";
+defparam not_h_or_not_e_and_f.synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y1_N8
+maxii_lcell not_d_and_e(
+// Equation(s):
+// \not_d_and_e~combout  = (!\d~combout  & (((\e~combout ))))
+
+	.clk(gnd),
+	.dataa(\d~combout ),
+	.datab(vcc),
+	.datac(\e~combout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\not_d_and_e~combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam not_d_and_e.lut_mask = "5050";
+defparam not_d_and_e.operation_mode = "normal";
+defparam not_d_and_e.output_mode = "comb_only";
+defparam not_d_and_e.register_cascade_mode = "off";
+defparam not_d_and_e.sum_lutc_input = "datac";
+defparam not_d_and_e.synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y1_N2
+maxii_lcell \e_and_not_f_OR_d_and_f~0 (
+// Equation(s):
+// \e_and_not_f_OR_d_and_f~0_combout  = (\f~combout  & (\d~combout )) # (!\f~combout  & (((\e~combout ))))
+
+	.clk(gnd),
+	.dataa(\d~combout ),
+	.datab(\f~combout ),
+	.datac(\e~combout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\e_and_not_f_OR_d_and_f~0_combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \e_and_not_f_OR_d_and_f~0 .lut_mask = "b8b8";
+defparam \e_and_not_f_OR_d_and_f~0 .operation_mode = "normal";
+defparam \e_and_not_f_OR_d_and_f~0 .output_mode = "comb_only";
+defparam \e_and_not_f_OR_d_and_f~0 .register_cascade_mode = "off";
+defparam \e_and_not_f_OR_d_and_f~0 .sum_lutc_input = "datac";
+defparam \e_and_not_f_OR_d_and_f~0 .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X4_Y1_N5
+maxii_lcell not_d_or_not_e_or_not_h(
+// Equation(s):
+// \not_d_or_not_e_or_not_h~combout  = (((!\d~combout )) # (!\e~combout )) # (!\h~combout )
+
+	.clk(gnd),
+	.dataa(\h~combout ),
+	.datab(\e~combout ),
+	.datac(\d~combout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\not_d_or_not_e_or_not_h~combout ),
+	.regout(),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam not_d_or_not_e_or_not_h.lut_mask = "7f7f";
+defparam not_d_or_not_e_or_not_h.operation_mode = "normal";
+defparam not_d_or_not_e_or_not_h.output_mode = "comb_only";
+defparam not_d_or_not_e_or_not_h.register_cascade_mode = "off";
+defparam not_d_or_not_e_or_not_h.sum_lutc_input = "datac";
+defparam not_d_or_not_e_or_not_h.synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_27,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \L1~I (
+	.datain(\d~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(L1));
+// synopsys translate_off
+defparam \L1~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_29,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \L2~I (
+	.datain(\d~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(L2));
+// synopsys translate_off
+defparam \L2~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_28,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \L3~I (
+	.datain(\not_c_or_d~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(L3));
+// synopsys translate_off
+defparam \L3~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \L4~I (
+	.datain(gnd),
+	.oe(vcc),
+	.combout(),
+	.padio(L4));
+// synopsys translate_off
+defparam \L4~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \L5~I (
+	.datain(!\c~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(L5));
+// synopsys translate_off
+defparam \L5~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \L0~I (
+	.datain(\d~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(L0));
+// synopsys translate_off
+defparam \L0~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \led0~I (
+	.datain(\g_or_f_or_g_and_h~0_combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(led0));
+// synopsys translate_off
+defparam \led0~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \led1~I (
+	.datain(\not_h_or_not_e_and_f~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(led1));
+// synopsys translate_off
+defparam \led1~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \led2~I (
+	.datain(gnd),
+	.oe(vcc),
+	.combout(),
+	.padio(led2));
+// synopsys translate_off
+defparam \led2~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \led3~I (
+	.datain(\not_d_and_e~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(led3));
+// synopsys translate_off
+defparam \led3~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \led4~I (
+	.datain(\e_and_not_f_OR_d_and_f~0_combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(led4));
+// synopsys translate_off
+defparam \led4~I .operation_mode = "output";
+// synopsys translate_on
+
+// Location: PIN_5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxii_io \led5~I (
+	.datain(\not_d_or_not_e_or_not_h~combout ),
+	.oe(vcc),
+	.combout(),
+	.padio(led5));
+// synopsys translate_off
+defparam \led5~I .operation_mode = "output";
+// synopsys translate_on
+
+endmodule

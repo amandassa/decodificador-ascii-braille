@@ -1,0 +1,65 @@
+|final
+c => c.IN1
+d => d.IN1
+e => e.IN1
+f => f.IN1
+g => g.IN1
+h => h.IN1
+led0 <= circuito1:c1.led0
+led1 <= circuito1:c1.led1
+led2 <= circuito1:c1.led2
+led3 <= circuito1:c1.led3
+led4 <= circuito1:c1.led4
+led5 <= circuito1:c1.led5
+L0 <= circuito2:c2.L0
+L1 <= circuito2:c2.L1
+L2 <= circuito2:c2.L2
+L3 <= circuito2:c2.L3
+L4 <= circuito2:c2.L4
+L5 <= circuito2:c2.L5
+
+
+|final|circuito1:c1
+a1 <= c.DB_MAX_OUTPUT_PORT_TYPE
+a2 <= d.DB_MAX_OUTPUT_PORT_TYPE
+led0 <= or1.DB_MAX_OUTPUT_PORT_TYPE
+led1 <= or2.DB_MAX_OUTPUT_PORT_TYPE
+led2 <= <GND>
+led3 <= and3.DB_MAX_OUTPUT_PORT_TYPE
+led4 <= or3.DB_MAX_OUTPUT_PORT_TYPE
+led5 <= or4.DB_MAX_OUTPUT_PORT_TYPE
+c => a1.DATAIN
+d => and5.IN0
+d => a2.DATAIN
+d => and3.IN0
+d => or4.IN0
+e => and1.IN0
+e => and3.IN1
+e => and4.IN0
+e => and2.IN0
+e => or4.IN1
+f => or1.IN1
+f => and2.IN1
+f => and5.IN1
+f => and4.IN1
+g => or1.IN2
+h => and1.IN1
+h => or2.IN1
+h => or4.IN2
+
+
+|final|circuito2:c2
+L0 <= a2.DB_MAX_OUTPUT_PORT_TYPE
+L1 <= a2.DB_MAX_OUTPUT_PORT_TYPE
+L2 <= a2.DB_MAX_OUTPUT_PORT_TYPE
+L3 <= or1.DB_MAX_OUTPUT_PORT_TYPE
+L4 <= <GND>
+L5 <= a1.DB_MAX_OUTPUT_PORT_TYPE
+a1 => or1.IN0
+a1 => L5.DATAIN
+a2 => or1.IN1
+a2 => L0.DATAIN
+a2 => L1.DATAIN
+a2 => L2.DATAIN
+
+
